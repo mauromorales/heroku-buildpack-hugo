@@ -34,7 +34,7 @@ fi
 echo "\n-----> Extracting Hugo ${HUGO_VERSION} binaries to ${BUILD_DIR}"
 mkdir -p $CACHE_DIR/$RELEASE_NAME
 tar -zxvf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
-mv $CACHE_DIR/hugo $BUILD_DIR/hugo
+cp $CACHE_DIR/hugo $BUILD_DIR/hugo
 
 # Export all of the user's ENV vars into this environment
 # See docs for what's going on here:
@@ -82,7 +82,7 @@ cd $BUILD_DIR
 mkdir -p static
 ./hugo version
 # ./hugo --cleanDestinationDir --ignoreCache
-./hugo
+# ./hugo
 
 # if the user has a script/post-hugo-build script, run that
 POST_BUILD_SCRIPT="$BUILD_DIR/script/post-hugo-build"
