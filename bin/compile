@@ -1,7 +1,6 @@
 #!/bin/sh
 # bin/compile <build-dir> <cache-dir> <env-dir>
 set -e
-set -x
 
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -71,10 +70,6 @@ if [ -e $BUILD_DIR/.hugotheme ]; then
   git clone $THEME_URL
 fi
 
-# ls all dirs
-ls -las $BUILD_DIR
-ls -las $CACHE_DIR
-ls -las $ENV_DIR
 
 # Build the site
 echo "\n-----> Building the site"
