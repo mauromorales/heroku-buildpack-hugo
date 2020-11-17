@@ -75,7 +75,9 @@ fi
 echo "\n-----> Building the site"
 cd $BUILD_DIR
 mkdir -p static
-./hugo --cleanDestinationDir --ignoreCache
+./hugo version
+# ./hugo --cleanDestinationDir --ignoreCache
+./hugo
 
 # if the user has a script/post-hugo-build script, run that
 POST_BUILD_SCRIPT="$BUILD_DIR/script/post-hugo-build"
